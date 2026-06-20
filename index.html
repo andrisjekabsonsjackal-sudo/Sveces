@@ -1,160 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amber & Flames</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        *{ margin:0; padding:0; box-sizing:border-box; }
-        /* Jaunais, siltāks un premium fons */
-        body{ font-family:'Lato', sans-serif; background:#e7dfd3; color:#222; overflow-x:hidden; }
-        html{ scroll-behavior:smooth; }
-
-        /* ================= HERO UN VIDEO ================= */
-        .hero{ position:relative; height:100vh; overflow:hidden; display:flex; justify-content:center; align-items:center; }
-        .hero-video{ position:absolute; width:100%; height:100%; object-fit:cover; object-position: 50% 20%; }
-        
-        /* Gaišāks, mājīgāks overlay */
-        .overlay{ position:absolute; inset:0; background:rgba(0,0,0,0.35); }
-        .hero::after{ content:""; position:absolute; inset:0; background:radial-gradient(circle, transparent 40%, rgba(0,0,0,0.4)); z-index:1; pointer-events:none; }
-
-        .hero-content{ position:relative; z-index:2; text-align:center; animation:fadeIn 2s ease; }
-        .hero h1{ color:white; font-size:4.5rem; font-family:'Playfair Display', serif; margin-bottom:15px; letter-spacing:2px; text-shadow: 2px 2px 10px rgba(0,0,0,0.6); }
-        .hero p{ color:#f2e6d8; font-size:1.2rem; font-style:italic; letter-spacing:1px; }
-
-        @keyframes fadeIn{
-            from{ opacity:0; transform:translateY(20px); }
-            to{ opacity:1; transform:translateY(0); }
-        }
-
-        /* ================= PĀRĒJAIS DIZAINS ================= */
-        .intro{ padding:120px 25px 90px; text-align:center; max-width:900px; margin:auto; }
-        .intro p{ font-size:1.25rem; line-height:1.8; color:#555; font-family:'Playfair Display', serif; }
-
-        .gallery-wrapper{ max-width:1400px; margin:auto; padding:0 20px 60px; }
-        .gallery{ columns:3; column-gap:28px; }
-        
-        .card{ position:relative; margin-bottom:28px; overflow:hidden; border-radius:24px; cursor:pointer; break-inside:avoid; background:#efe7dc; box-shadow:0 8px 25px rgba(0,0,0,0.08); transition:0.5s ease; }
-        .card:hover{ transform:translateY(-6px); box-shadow: 0 15px 35px rgba(0,0,0,0.14), 0 0 25px rgba(212,175,55,0.12); }
-        .card img{ width:100%; display:block; transition:0.8s; }
-        .card:hover img{ transform:scale(1.05); }
-        .card-content{ padding:24px; }
-        .card h3{ font-family:'Playfair Display', serif; font-size:1.5rem; margin-bottom:10px; color:#222; }
-        .desc{ color:#777; line-height:1.7; font-size:0.95rem; }
-
-        /* ================= MOBILE OPTIMIZATION ================= */
-        @media(max-width:1000px){ .gallery{ columns:2; } }
-        
-        @media(max-width:650px){ 
-            .gallery{ columns:1; } 
-            .card-content{ padding:18px; } 
-            .hero h1{ font-size:3rem; }
-            .intro{ padding:70px 20px 50px; }
-            .about{ padding:80px 20px; }
-            /* Tumšāks overlay telefonos, lai teksts lasītos perfekti */
-            .overlay{ background:rgba(0,0,0,0.45); }
-        }
-
-        .coming-soon-msg { text-align: center; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; color: #8c6239; padding-bottom: 80px; }
-
-        .modal{ display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:999; justify-content:center; align-items:center; flex-direction:column; }
-        #modalImg{ max-width:85%; max-height:80%; border-radius:18px; animation:zoom 0.3s ease; }
-        @keyframes zoom{ from{ transform:scale(0.8); } to{ transform:scale(1); } }
-        #caption{ color:white; margin-top:20px; font-size:1.5rem; font-family:'Playfair Display', serif; }
-
-        .about{ background:#111; color:#f5e9dc; padding:120px 25px; text-align:center; }
-        .about h2{ font-size:3rem; margin-bottom:25px; font-family:'Playfair Display', serif; }
-        .about p{ max-width:700px; margin:auto; line-height:1.9; color:#ccc; }
-
-        /* Premium un diskrēts footer */
-        footer{ background:#0b0b0b; color:#777; text-align:center; padding:35px; font-size:0.8rem; border-top:1px solid #1a1a1a; opacity: 0.8; letter-spacing: 0.5px; }
-    </style>
+  <!-- ŠEIT SĀKAS "GALVA". Šo visu redz tikai Google! -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Amber & Flames | Handcrafted Candles in Leeds</title>
+  <meta name="description" content="Discover premium handcrafted candles by Amber & Flames, lovingly made in Leeds, UK.">
+  <meta name="keywords" content="handcrafted candles leeds, handmade candles uk, amber and flames">
+  <meta name="author" content="Diana Ozola">
+  <!-- ŠEIT BEIDZAS "GALVA" -->
 </head>
+
 <body>
+  <!-- ŠEIT SĀKAS "ĶERMENIS". Šo visu redzēs jūsu klienti! -->
 
-    <header class="hero">
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="candles2.mp4" type="video/mp4">
-        </video>
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h1>Amber & Flames</h1>
-            <p>Handcrafted candles for calm interiors and slow evenings.</p>
-        </div>
-    </header>
+  <h1>Amber & Flames</h1>
+  <p>Premium Handcrafted Candles in Leeds</p>
 
-    <section class="intro">
-        <p>A curated collection of handcrafted candles designed to bring soft light, warm interiors and timeless atmosphere into everyday moments.</p>
-    </section>
+  <h2>Contact Us / Place an Order</h2>
 
-    <div class="gallery-wrapper">
-        <div class="gallery" id="gallery"></div>
-    </div>
-    
-    <div class="coming-soon-msg">
-        More exclusive designs coming soon...
-    </div>
+  <!-- Šīs ir saites uz WhatsApp, Zvanu un Instagram -->
+  <p>💬 <a href="https://wa.me/447706246937" target="_blank">Message us on WhatsApp</a></p>
+  <p>📞 <a href="tel:+447706246937">Call us: +44 7706 246937</a></p>
+  <p>📸 <a href="https://www.instagram.com/ozola143/" target="_blank">Follow us on Instagram</a></p>
 
-    <section class="about">
-        <h2>Our Story</h2>
-        <p>Amber & Flames was created from a love for warm interiors, quiet evenings and the calming atmosphere of candlelight. Every piece is handcrafted with attention to detail, creating elegant scents inspired by comfort and timeless simplicity.</p>
-    </section>
+  <!-- Šī ir e-pasta sūtīšanas forma (cilvēks ieraksta, Netlify nosūta uz e-pastu) -->
+  <form name="contact" method="POST" data-netlify="true">
+    <p>
+      <label>Your Name: <br>
+      <input type="text" name="name" required /></label>
+    </p>
+    <p>
+      <label>Your Email: <br>
+      <input type="email" name="email" required /></label>
+    </p>
+    <p>
+      <label>Order details / Message: <br>
+      <textarea name="message" rows="4" required></textarea></label>
+    </p>
+    <p>
+      <button type="submit">Send Order</button>
+    </p>
+  </form>
 
-    <div class="modal" id="modal" onclick="closeModal()">
-        <img id="modalImg">
-        <p id="caption"></p>
-    </div>
-
-    <footer>
-        © 2026 Amber & Flames — Crafted in Leeds, United Kingdom
-    </footer>
-
-    <script>
-        const candles = [
-            { id:"DancersOfLove", name:"Crimson Romance", desc:"Passionate, deep floral notes for intimate evenings." },
-            { id:"DesertInDesert", name:"Desert Mirage", desc:"Sun-baked woods and warm, earthy tones." },
-            { id:"FragnanceLayers", name:"Signature Blend", desc:"A complex, slow-revealing aromatic profile." },
-            { id:"HartLayers", name:"Heartwood", desc:"Gentle cedar and soft amber warmth." },
-            { id:"InGarden", name:"Blooming Garden", desc:"Crisp, fresh botanicals of a summer morning." },
-            { id:"LemonTea", name:"Citrus Infusion", desc:"Bright, uplifting zest with subtle tea leaves." },
-            { id:"Moonlight", name:"Moonlight", desc:"Cool, calming scents for late-night serenity." },
-            { id:"PotOfFlowers", name:"Wild Bloom", desc:"An untamed bouquet of meadow florals." },
-            { id:"RoseBall", name:"Velvet Rose", desc:"Modern, luxurious rose with a sophisticated edge." },
-            { id:"RoseSkull", name:"Mystic Rose", desc:"Dark, bold, and intriguingly complex." },
-            { id:"StudentDream", name:"Quiet Focus", desc:"Clear, centering notes for deep concentration." },
-            { id:"Teddy", name:"Cashmere Blanket", desc:"Soft, nostalgic comfort for chilly nights." },
-            { id:"Warm", name:"Ember Glow", desc:"Deep, rich warmth reminiscent of a fading fire." },
-            { id:"SakuraDream", name:"Sakura Dream", desc:"Delicate, airy essence of spring blossoms." },
-            { id:"FMSeaBreeze", name:"Coastal Breeze", desc:"Crisp salt air and refreshing ocean vitality." },
-            { id:"CaramelOfDesert", name:"Desert Caramel", desc:"Sweet, golden richness over dry woods." },
-            { id:"JasmineInGarden", name:"Midnight Jasmine", desc:"Intoxicating night-blooming floral notes." },
-            { id:"BananaOnbeach", name:"Tropical Sands", desc:"Sun-drenched exotic fruits and warm breezes." }
-        ];
-
-        function showGallery(){
-            document.getElementById('gallery').innerHTML = candles.map(c => `
-                <div class="card" onclick="openModal('${c.id}.jpeg', '${c.name}')">
-                    <img src="${c.id}.jpeg" alt="${c.name}">
-                    <div class="card-content">
-                        <h3>${c.name}</h3>
-                        <p class="desc">${c.desc}</p>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function openModal(src, name){
-            document.getElementById('modal').style.display = 'flex';
-            document.getElementById('modalImg').src = src;
-            document.getElementById('caption').innerText = name;
-        }
-
-        function closeModal(){
-            document.getElementById('modal').style.display = 'none';
-        }
-
-        showGallery();
-    </script>
+  <!-- ŠEIT BEIDZAS "ĶERMENIS" -->
 </body>
 </html>
