@@ -39,19 +39,38 @@
         .intro p{ font-size:1.25rem; line-height:1.8; color:#555; font-family:'Playfair Display', serif; }
 
         .gallery-wrapper{ max-width:1400px; margin:auto; padding:0 20px 60px; }
-        .gallery{ columns:3; column-gap:28px; }
         
-        .card{ position:relative; margin-bottom:28px; overflow:hidden; border-radius:24px; cursor:pointer; break-inside:avoid; background:#efe7dc; box-shadow:0 8px 25px rgba(0,0,0,0.08); transition:0.5s ease; }
+        /* CSS GRID - Perfektai kāršu rindai */
+        .gallery { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 28px; 
+        }
+        
+        .card { 
+            position: relative; 
+            display: flex; 
+            flex-direction: column;
+            overflow: hidden; 
+            border-radius: 24px; 
+            cursor: pointer; 
+            background: #efe7dc; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08); 
+            transition: 0.5s ease; 
+        }
         .card:hover{ transform:translateY(-6px); box-shadow: 0 15px 35px rgba(0,0,0,0.14), 0 0 25px rgba(212,175,55,0.12); }
+        
+        /* ASPECT RATIO - Bildes apgriešana vienādos rāmjos */
         .card img { 
-    width: 100%; 
-    aspect-ratio: 4 / 5; /* Šis padarīs visas bildes vienādi garenas (kā Instagram portreti) */
-    object-fit: cover; /* Šis nodrošina, ka bilde netiek saspiesta, bet smuki "piepilda" rāmi */
-    display: block; 
-    transition: 0.8s; 
-}
+            width: 100%; 
+            aspect-ratio: 4 / 5; 
+            object-fit: cover; 
+            display: block; 
+            transition: 0.8s; 
+        }
         .card:hover img{ transform:scale(1.05); }
-        .card-content{ padding:24px; }
+        
+        .card-content{ padding:24px; flex-grow: 1; }
         .card h3{ font-family:'Playfair Display', serif; font-size:1.5rem; margin-bottom:10px; color:#222; }
         .desc{ color:#777; line-height:1.7; font-size:0.95rem; }
 
@@ -70,18 +89,16 @@
         .care-faq-wrapper { max-width: 900px; margin: auto; padding: 100px 25px 40px; }
         .section-title { font-size: 2.5rem; font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 40px; color: #222; }
 
-        /* Care Guide Grid */
         .care-guide { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 80px; }
         .care-item { background: #efe7dc; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .care-item h4 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 15px; color: #8c6239; }
         .care-item p { font-size: 0.95rem; line-height: 1.6; color: #555; }
 
-        /* FAQ Accordion */
         .faq-container { display: flex; flex-direction: column; gap: 15px; }
         details { background: #efe7dc; border-radius: 10px; padding: 20px; cursor: pointer; box-shadow: 0 3px 10px rgba(0,0,0,0.03); transition: background 0.3s ease; }
         details:hover { background: #f5eedf; }
         summary { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; color: #222; list-style: none; outline: none; position: relative; padding-right: 20px; }
-        summary::-webkit-details-marker { display: none; } /* Paslēpj standarta bultiņu */
+        summary::-webkit-details-marker { display: none; } 
         summary::after { content: '+'; position: absolute; right: 0; top: 0; font-size: 1.5rem; color: #8c6239; font-weight: 300; transition: transform 0.3s; }
         details[open] summary::after { content: '−'; transform: rotate(180deg); }
         details p { margin-top: 15px; font-size: 1rem; color: #555; line-height: 1.6; border-top: 1px solid #d4c8b8; padding-top: 15px; cursor: text; }
@@ -100,20 +117,20 @@
         .contact-form button { background: #222; color: white; border: none; padding: 15px; font-size: 1.1rem; border-radius: 8px; cursor: pointer; transition: 0.3s; width: 100%; font-family: 'Playfair Display', serif; letter-spacing: 1px; }
         .contact-form button:hover { background: #8c6239; }
 
-        /* Premium un diskrēts footer */
         footer{ background:#0b0b0b; color:#777; text-align:center; padding:35px; font-size:0.8rem; border-top:1px solid #1a1a1a; opacity: 0.8; letter-spacing: 0.5px; }
 
         /* ================= MOBILE OPTIMIZATION ================= */
-        @media(max-width:1000px){ .gallery{ columns:2; } }
+        @media(max-width:1000px){ 
+            .gallery{ grid-template-columns: repeat(2, 1fr); } 
+        }
         
         @media(max-width:650px){ 
-            .gallery{ columns:1; } 
+            .gallery{ grid-template-columns: 1fr; } 
             .card-content{ padding:18px; } 
             .hero h1{ font-size:3rem; }
             .intro{ padding:70px 20px 50px; }
             .about{ padding:80px 20px; }
             .care-faq-wrapper { padding: 60px 20px; }
-            /* Tumšāks overlay telefonos, lai teksts lasītos perfekti */
             .overlay{ background:rgba(0,0,0,0.45); }
         }
     </style>
