@@ -43,7 +43,13 @@
         
         .card{ position:relative; margin-bottom:28px; overflow:hidden; border-radius:24px; cursor:pointer; break-inside:avoid; background:#efe7dc; box-shadow:0 8px 25px rgba(0,0,0,0.08); transition:0.5s ease; }
         .card:hover{ transform:translateY(-6px); box-shadow: 0 15px 35px rgba(0,0,0,0.14), 0 0 25px rgba(212,175,55,0.12); }
-        .card img{ width:100%; display:block; transition:0.8s; }
+        .card img { 
+    width: 100%; 
+    aspect-ratio: 4 / 5; /* Šis padarīs visas bildes vienādi garenas (kā Instagram portreti) */
+    object-fit: cover; /* Šis nodrošina, ka bilde netiek saspiesta, bet smuki "piepilda" rāmi */
+    display: block; 
+    transition: 0.8s; 
+}
         .card:hover img{ transform:scale(1.05); }
         .card-content{ padding:24px; }
         .card h3{ font-family:'Playfair Display', serif; font-size:1.5rem; margin-bottom:10px; color:#222; }
